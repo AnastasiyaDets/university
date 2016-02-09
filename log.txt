@@ -1,0 +1,12 @@
+$ git log
+commit 79575e31ac194b5bfd67ff7806c7a3abda0e0742
+Author: Anastasia Dets <anastasiya.dets@mail.ru>
+Date:   Tue Feb 9 11:58:18 2016 +0300
+
+    Add status.txt
+
+commit 6df8b349dd1a28910a99595e294a24c79e1f2d47
+Author: Anastasia Dets <anastasiya.dets@mail.ru>
+Date:   Tue Feb 9 11:55:33 2016 +0300
+
+    Add .gitignore
