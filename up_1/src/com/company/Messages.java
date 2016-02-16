@@ -4,12 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.*;
-
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public class Messages {
@@ -40,8 +37,6 @@ public class Messages {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void add(String id, String author, long timestamp, String message) {

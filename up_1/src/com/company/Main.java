@@ -11,12 +11,14 @@ public class Main {
 
         while (true) {
             System.out.println("Что желаете сделать?");
+            System.out.println("---------------------");
             System.out.println("Добавить сообщение(1)");
             System.out.println("Просмотреть в хронологическом порядке(2)");
             System.out.println("Удалить сообщение по id (3)");
             System.out.println("Загрузить сообщения из файла(4)");
             System.out.println("Сохранить сообщения в файл (5)");
             System.out.println("Завершить работу программы(6)");
+            System.out.println("---------------------");
 
 
             int choice = new Integer(in.nextLine());
@@ -64,6 +66,7 @@ public class Main {
                     break;
 
                 case 6:
+                    System.out.println("Я отключаюсь! Пока!");
                     return;
 
                 default:
