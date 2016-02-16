@@ -55,5 +55,4 @@ public class Message {
     public String toString(){
         return  getID() + " " + getAuthor() + " " + getDateInFormat() + " " + getMessage();
     }
-
 }

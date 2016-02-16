@@ -1,12 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Messages m1 = new Messages();
-
         Scanner in = new Scanner(System.in);
 
         while (true) {
@@ -20,22 +20,34 @@ public class Main {
             System.out.println("Завершить работу программы(6)");
             System.out.println("---------------------");
 
-
             int choice = new Integer(in.nextLine());
 
             switch (choice) {
-                case 1:
+                case 1:{
+                    try{
                     System.out.println("Заполните пункты, для добавления сообщения:");
                     System.out.println("Введите ID: ");
                     String id = in.nextLine();
+                        if(id.isEmpty()){
+                            System.out.println("Не введён ID!");
+                            break;
+                        }
                     System.out.println("Введите Имя: ");
                     String author = in.nextLine();
+                        if(author.isEmpty()){
+                            System.out.println("Не введён автор!");
+                        break;
+                        }
                     System.out.println("Введите дату: ");
                     long timestamp = new Long(in.nextLine());
                     System.out.println("Введите текст сообщения: ");
                     String message = in.nextLine();
                     m1.add(id, author, timestamp, message);
                     System.out.println("Ваше сообщение добавлено!" + "\r\n");
+                    } catch(NumberFormatException e){
+                            System.out.println("Неправильно введена дата");
+                    }
+                    }
                     break;
 
                 case 2:
@@ -55,14 +67,12 @@ public class Main {
                     System.out.println("Введите название файла: ");
                     String name = in.nextLine();
                     m1.readFromFile(name);
-                    System.out.println("Ваши сообщения загружены из файла!" + "\r\n");
                     break;
 
                 case 5:
                     System.out.println("Введите название файла: ");
                     String name1 = in.nextLine();
                     m1.writeToFile(name1);
-                    System.out.println("Ваши сообщения сохранены в файл!" + "\r\n");
                     break;
 
                 case 6:

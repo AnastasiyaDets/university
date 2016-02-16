@@ -13,7 +13,7 @@ public class Messages {
     private ArrayList<Message> messages;
 
     public Messages() {
-        messages = new ArrayList<Message>();
+        messages = new ArrayList<>();
     }
 
     public void readFromFile(String fileName){
@@ -23,6 +23,7 @@ public class Messages {
             Type collectionType = new TypeToken<Collection<Message>>(){}.getType();
             ArrayList<Message> messages = gson.fromJson(fr, collectionType);
             this.messages.addAll(messages);
+            System.out.println("Ваши сообщения загружены из файла!" + "\r\n");
         } catch (FileNotFoundException e) {
             System.out.println("Error with file! Sorry!");
         }
@@ -34,6 +35,7 @@ public class Messages {
             Gson gson = new Gson();
             fw.write(gson.toJson(messages));
             fw.close();
+            System.out.println("Ваши сообщения сохранены в файл!" + "\r\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,14 +47,7 @@ public class Messages {
     }
 
     public void printAll() {
-
-        Collections.sort(messages, new Comparator<Message>() {
-            @Override
-            public int compare(Message a, Message b) {
-                return Long.compare(a.getTimestamp(), b.getTimestamp());
-            }
-        });
-
+        Collections.sort(messages, (a, b) -> Long.compare(a.getTimestamp(), b.getTimestamp()));
         for (int i = 0; i < messages.size(); i++) {
             System.out.println(messages.get(i));
         }
@@ -65,6 +60,5 @@ public class Messages {
                 message.remove();
             }
         }
-
     }
 }
