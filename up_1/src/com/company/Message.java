@@ -1,6 +1,7 @@
 package com.company;
 
 import java.text.SimpleDateFormat;
+import java.util.UUID;
 
 public class Message {
     String id;
@@ -8,11 +9,11 @@ public class Message {
     String message;
     long timestamp;
 
-    public Message(String id, String author, String message, long timestamp){
-        setId(id);
+    public Message(String author, String message){
+        setId(UUID.randomUUID().toString());
         setAuthor(author);
         setMessage(message);
-        setTimestamp(timestamp);
+        setTimestamp(System.currentTimeMillis());
     }
 
     public String getID(){

@@ -41,8 +41,8 @@ public class Messages {
         }
     }
 
-    public void add(String id, String author, long timestamp, String message) {
-        Message message1 = new Message(id, author, message, timestamp);
+    public void add(String author, String message) {
+        Message message1 = new Message(author, message);
         messages.add(message1);
     }
 

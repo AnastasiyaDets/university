@@ -24,29 +24,16 @@ public class Main {
 
             switch (choice) {
                 case 1:{
-                    try{
                     System.out.println("Заполните пункты, для добавления сообщения:");
-                    System.out.println("Введите ID: ");
-                    String id = in.nextLine();
-                        if(id.isEmpty()){
-                            System.out.println("Не введён ID!");
-                            break;
-                        }
                     System.out.println("Введите Имя: ");
                     String author = in.nextLine();
                         if(author.isEmpty()){
                             System.out.println("Не введён автор!");
                         break;
                         }
-                    System.out.println("Введите дату: ");
-                    long timestamp = new Long(in.nextLine());
                     System.out.println("Введите текст сообщения: ");
                     String message = in.nextLine();
-                    m1.add(id, author, timestamp, message);
-                    System.out.println("Ваше сообщение добавлено!" + "\r\n");
-                    } catch(NumberFormatException e){
-                            System.out.println("Неправильно введена дата");
-                    }
+                    m1.add(author, message);
                     }
                     break;
 
