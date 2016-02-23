@@ -61,4 +61,20 @@ public class Messages {
             }
         }
     }
+
+    public void searchByAuthor(String newAuthor){
+        boolean flag = true;
+        for (int i=0; i < messages.size(); i++){
+            if(messages.get(i).getAuthor().equals(newAuthor))
+            {
+                flag = false;
+                System.out.println("Your message:");
+                System.out.println(messages.get(i));
+            }
+            if (flag)
+            {
+                System.out.println("No messages from your author");
+            }
+        }
+    }
 }

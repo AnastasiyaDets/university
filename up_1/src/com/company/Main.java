@@ -17,7 +17,8 @@ public class Main {
             System.out.println("Удалить сообщение по id (3)");
             System.out.println("Загрузить сообщения из файла(4)");
             System.out.println("Сохранить сообщения в файл (5)");
-            System.out.println("Завершить работу программы(6)");
+            System.out.println("Поиск сообщений по автору(6)");
+            System.out.println("Завершить работу программы(7)");
             System.out.println("---------------------");
 
             int choice = new Integer(in.nextLine());
@@ -63,6 +64,12 @@ public class Main {
                     break;
 
                 case 6:
+                    System.out.println("Введите автора, по которому хотите искать");
+                    String newAuthor = in.nextLine();
+                    m1.searchByAuthor(newAuthor);
+                    break;
+
+                case 7:
                     System.out.println("Я отключаюсь! Пока!");
                     return;
 
