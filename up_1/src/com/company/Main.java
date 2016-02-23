@@ -18,7 +18,8 @@ public class Main {
             System.out.println("Загрузить сообщения из файла(4)");
             System.out.println("Сохранить сообщения в файл (5)");
             System.out.println("Поиск сообщений по автору(6)");
-            System.out.println("Завершить работу программы(7)");
+            System.out.println("Поиск сообщений по ключевому слову(7)");
+            System.out.println("Завершить работу программы(8)");
             System.out.println("---------------------");
 
             int choice = new Integer(in.nextLine());
@@ -70,6 +71,12 @@ public class Main {
                     break;
 
                 case 7:
+                    System.out.println("Введите слово, по которому хотите искать");
+                    String keyword = in.nextLine();
+                    m1.searchByKeyword(keyword);
+                    break;
+
+                case 8:
                     System.out.println("Я отключаюсь! Пока!");
                     return;
 

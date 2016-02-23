@@ -77,4 +77,20 @@ public class Messages {
             }
         }
     }
+
+    public void searchByKeyword(String keyword){
+        boolean flag = true;
+        for (int i=0; i < messages.size(); i++){
+            if(messages.get(i).getMessage().contains(keyword))
+            {
+                flag = false;
+                System.out.println("Your message:");
+                System.out.println(messages.get(i));
+            }
+            if (flag)
+            {
+                System.out.println("No messages with this keyword");
+            }
+        }
+    }
 }
