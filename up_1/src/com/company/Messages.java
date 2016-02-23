@@ -23,7 +23,7 @@ public class Messages {
             Type collectionType = new TypeToken<Collection<Message>>(){}.getType();
             ArrayList<Message> messages = gson.fromJson(fr, collectionType);
             this.messages.addAll(messages);
-            System.out.println("Ваши сообщения загружены из файла!" + "\r\n");
+            System.out.println("Your messages are downloaded from a file!" + "\r\n");
         } catch (FileNotFoundException e) {
             System.out.println("Error with file! Sorry!");
         }
@@ -35,7 +35,7 @@ public class Messages {
             Gson gson = new Gson();
             fw.write(gson.toJson(messages));
             fw.close();
-            System.out.println("Ваши сообщения сохранены в файл!" + "\r\n");
+            System.out.println("Your messages saved in the file!" + "\r\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,10 +71,11 @@ public class Messages {
                 System.out.println("Your message:");
                 System.out.println(messages.get(i));
             }
-            if (flag)
-            {
-                System.out.println("No messages from your author");
-            }
+        }
+
+        if (flag)
+        {
+            System.out.println("No messages from your author");
         }
     }
 
@@ -87,10 +88,11 @@ public class Messages {
                 System.out.println("Your message:");
                 System.out.println(messages.get(i));
             }
-            if (flag)
-            {
-                System.out.println("No messages with this keyword");
-            }
+        }
+
+        if (flag)
+        {
+            System.out.println("No messages with this keyword");
         }
     }
 }

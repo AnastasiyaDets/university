@@ -10,78 +10,78 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Что желаете сделать?");
+            System.out.println("What do you want to do?");
             System.out.println("---------------------");
-            System.out.println("Добавить сообщение(1)");
-            System.out.println("Просмотреть в хронологическом порядке(2)");
-            System.out.println("Удалить сообщение по id (3)");
-            System.out.println("Загрузить сообщения из файла(4)");
-            System.out.println("Сохранить сообщения в файл (5)");
-            System.out.println("Поиск сообщений по автору(6)");
-            System.out.println("Поиск сообщений по ключевому слову(7)");
-            System.out.println("Завершить работу программы(8)");
+            System.out.println("Add message (1)");
+            System.out.println("View in chronological order(2)");
+            System.out.println("Delete message by id (3)");
+            System.out.println("Download messages from the file (4)");
+            System.out.println("Save messages to the file (5)");
+            System.out.println("Search by author (6)");
+            System.out.println("Search by keyword (7)");
+            System.out.println("Exit (8)");
             System.out.println("---------------------");
+            System.out.println("\r\n");
 
             int choice = new Integer(in.nextLine());
 
             switch (choice) {
                 case 1:{
-                    System.out.println("Заполните пункты, для добавления сообщения:");
-                    System.out.println("Введите Имя: ");
+                    System.out.println("Enter your name: ");
                     String author = in.nextLine();
                         if(author.isEmpty()){
-                            System.out.println("Не введён автор!");
+                            System.out.println("The author doesn't put");
                         break;
                         }
-                    System.out.println("Введите текст сообщения: ");
+                    System.out.println("Enter your message: ");
                     String message = in.nextLine();
                     m1.add(author, message);
                     }
                     break;
 
                 case 2:
-                    System.out.println("Ваши сообщения: ");
+                    System.out.println("Your messages: ");
                     m1.printAll();
                     System.out.println("\r\n");
                     break;
 
                 case 3:
-                    System.out.println("Введите id для удаления сообщения: ");
+                    System.out.println("Enter id to delete: ");
                     String id1 = in.nextLine();
                     m1.deleteMessage(id1);
-                    System.out.println("Ваше сообщение удалено!" + "\r\n");
+                    System.out.println("Your message is deleted!" + "\r\n");
                     break;
 
                 case 4:
-                    System.out.println("Введите название файла: ");
+                    System.out.println("Enter name of file: ");
                     String name = in.nextLine();
                     m1.readFromFile(name);
                     break;
 
                 case 5:
-                    System.out.println("Введите название файла: ");
+                    System.out.println("Enter name of file: ");
                     String name1 = in.nextLine();
                     m1.writeToFile(name1);
                     break;
 
                 case 6:
-                    System.out.println("Введите автора, по которому хотите искать");
+                    System.out.println("Enter the author for search:");
                     String newAuthor = in.nextLine();
                     m1.searchByAuthor(newAuthor);
                     break;
 
                 case 7:
-                    System.out.println("Введите слово, по которому хотите искать");
+                    System.out.println("Enter your keyword: ");
                     String keyword = in.nextLine();
                     m1.searchByKeyword(keyword);
                     break;
 
                 case 8:
-                    System.out.println("Я отключаюсь! Пока!");
+                    System.out.println("I'm off! Bye!");
                     return;
 
                 default:
-                    System.out.println("Неверно выбрано действие!" + "\r\n");
+                    System.out.println("Invalid action!" + "\r\n");
             }
         }
     }
