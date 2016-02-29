@@ -12,13 +12,13 @@ public class Main {
         while (true) {
             System.out.println("What do you want to do?");
             System.out.println("---------------------");
-            System.out.println("Add message (1)");
-            System.out.println("View in chronological order(2)");
+            System.out.println("Add a message (1)");
+            System.out.println("Look in chronological order(2)");
             System.out.println("Delete message by id (3)");
-            System.out.println("Download messages from the file (4)");
-            System.out.println("Save messages to the file (5)");
-            System.out.println("Search by author (6)");
-            System.out.println("Search by keyword (7)");
+            System.out.println("Download messages from file (4)");
+            System.out.println("Save messages to file (5)");
+            System.out.println("Search messages by author (6)");
+            System.out.println("Search messages by keyword (7)");
             System.out.println("Exit (8)");
             System.out.println("---------------------");
             System.out.println("\r\n");
@@ -30,7 +30,7 @@ public class Main {
                     System.out.println("Enter your name: ");
                     String author = in.nextLine();
                         if(author.isEmpty()){
-                            System.out.println("The author doesn't put");
+                            System.out.println("Author is not entered");
                         break;
                         }
                     System.out.println("Enter your message: ");
@@ -46,26 +46,26 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Enter id to delete: ");
+                    System.out.println("Enter id for delete message: ");
                     String id1 = in.nextLine();
                     m1.deleteMessage(id1);
-                    System.out.println("Your message is deleted!" + "\r\n");
+                    System.out.println("Your message has been removed!" + "\r\n");
                     break;
 
                 case 4:
-                    System.out.println("Enter name of file: ");
+                    System.out.println("Enter name of the file: ");
                     String name = in.nextLine();
                     m1.readFromFile(name);
                     break;
 
                 case 5:
-                    System.out.println("Enter name of file: ");
+                    System.out.println("Enter name of the file: ");
                     String name1 = in.nextLine();
                     m1.writeToFile(name1);
                     break;
 
                 case 6:
-                    System.out.println("Enter the author for search:");
+                    System.out.println("Enter author, who you want to search by:");
                     String newAuthor = in.nextLine();
                     m1.searchByAuthor(newAuthor);
                     break;
@@ -81,7 +81,7 @@ public class Main {
                     return;
 
                 default:
-                    System.out.println("Invalid action!" + "\r\n");
+                    System.out.println("Action selected incorrectly!" + "\r\n");
             }
         }
     }

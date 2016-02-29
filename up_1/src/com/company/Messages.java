@@ -23,7 +23,7 @@ public class Messages {
             Type collectionType = new TypeToken<Collection<Message>>(){}.getType();
             ArrayList<Message> messages = gson.fromJson(fr, collectionType);
             this.messages.addAll(messages);
-            System.out.println("Your messages are downloaded from a file!" + "\r\n");
+            System.out.println("Your messages downloaded from file!" + "\r\n");
         } catch (FileNotFoundException e) {
             System.out.println("Error with file! Sorry!");
         }
@@ -35,7 +35,7 @@ public class Messages {
             Gson gson = new Gson();
             fw.write(gson.toJson(messages));
             fw.close();
-            System.out.println("Your messages saved in the file!" + "\r\n");
+            System.out.println("Your messages saved to file!" + "\r\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
