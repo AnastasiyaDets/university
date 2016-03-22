@@ -35,6 +35,7 @@ body{
 .message-send{
     border: 2px solid white;
     width: 60%;
+    margin-left: 20px;
 }
 .name{
     width: 30%;
@@ -62,6 +63,13 @@ body{
 .btn:hover {
     background: #3cb0fd;
     text-decoration: none;
+}
+
+.changeName{
+    color: darkblue;
+    border: 2px solid white;
+    width: 20%;
+    margin: 5px 5px;
 }
 
 

@@ -29,10 +29,21 @@ function keypressOnForm(e){
     }
 }
 
+function changeName(){
+    var field = document.getElementById('new-name');
+    author = field.value;
+    field.value = "";
+    var me = document.getElementById('me');
+    me.innerHTML = author;
+}
+
 function send(){
     var messages = document.getElementById("messages")
     var messageField = document.getElementById("message-field");
     var text = messageField.value;
+    if (text == undefined || text.trim().length == 0){
+        return;
+    }
     messageField.value = "";
     var message = document.createElement('div');
     message.classList.add('message');
@@ -41,4 +52,8 @@ function send(){
         '<span class="info">[' + formatDate(new Date()) + '] <b>' + author + ': </b></span>' + text;
     messages.appendChild(message);
     message.scrollIntoView();
+}
+
+function deleteMessage(){
+
 }

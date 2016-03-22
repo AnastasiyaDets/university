@@ -16,6 +16,8 @@
 
         <div class="chat">
             <div class="links">
+                <input class="changeName" type="text" id="new-name" placeholder="Input new name">
+                <button onclick="changeName()">Save</button>
                 <a href="#" title="Show history"><i class="fa fa-history"></i></a>
                 <i class="fa fa-server"></i>Server: On
             </div>
@@ -30,7 +32,7 @@
             </div>
 
             <div>
-                <label class="name"><a href="#" title="Edit name"> <i class="fa fa-pencil"></i></a> Harry Potter:</label>
+                <label class="name"><span id="me">Harry Potter</span>:</label>
                 <input class="message-send" id="message-field" type="text" name="message">
                 <button class="btn" onclick="send()">Send</button>
             </div>
