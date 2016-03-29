@@ -32,6 +32,9 @@ function keypressOnForm(e){
 function changeName(){
     var field = document.getElementById('new-name');
     author = field.value;
+    if (author == undefined || author.trim().length == 0){
+        return;
+    }
     field.value = "";
     var me = document.getElementById('me');
     me.innerHTML = author;
@@ -48,12 +51,9 @@ function send(){
     var message = document.createElement('div');
     message.classList.add('message');
     message.innerHTML = '<a href="#" title="edit"><i class="fa fa-pencil"></i></a>' +
-        '<a href="#" title="remove"><i class="fa fa-trash"></i></a>' +
+        '<a href="#" title="remove" onclick="this.parentNode.remove()"><i class="fa fa-trash"></i></a>' +
         '<span class="info">[' + formatDate(new Date()) + '] <b>' + author + ': </b></span>' + text;
     messages.appendChild(message);
     message.scrollIntoView();
 }
 
-function deleteMessage(){
-
-}
