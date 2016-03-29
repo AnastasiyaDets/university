@@ -20,6 +20,17 @@ function formatDate(date){
 
 function run(){
     document.getElementById("message-field").addEventListener("keypress", keypressOnForm);
+
+    document.getElementById("chat").addEventListener("click", editMessage);
+
+}
+
+function editMessage(evt){
+    if(evt.target.classList.contains("fa-pencil")){
+        var messageText = evt.target.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
+        var newMessage = prompt("Change your message:", messageText.innerHTML);
+        messageText.innerHTML = newMessage;
+    }
 }
 
 function keypressOnForm(e){
@@ -52,8 +63,7 @@ function send(){
     message.classList.add('message');
     message.innerHTML = '<a href="#" title="edit"><i class="fa fa-pencil"></i></a>' +
         '<a href="#" title="remove" onclick="this.parentNode.remove()"><i class="fa fa-trash"></i></a>' +
-        '<span class="info">[' + formatDate(new Date()) + '] <b>' + author + ': </b></span>' + text;
+        '<span class="myInfo">[' + formatDate(new Date()) + '] <b>' + author + ': </b></span><span class="message">' + text + "</span>";
     messages.appendChild(message);
     message.scrollIntoView();
 }
-

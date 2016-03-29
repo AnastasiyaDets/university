@@ -27,7 +27,7 @@ body{
     overflow-y: auto;
 }
 
-.info{
+.info, .myInfo{
     font-size: 12px;
     color: darkblue;
 }
