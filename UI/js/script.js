@@ -20,7 +20,6 @@ function formatDate(date){
 
 function run(){
     document.getElementById("message-field").addEventListener("keypress", keypressOnForm);
-
     document.getElementById("chat").addEventListener("click", editMessage);
 
 }
@@ -29,6 +28,10 @@ function editMessage(evt){
     if(evt.target.classList.contains("fa-pencil")){
         var messageText = evt.target.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
         var newMessage = prompt("Change your message:", messageText.innerHTML);
+        if (!newMessage) {
+            alert('You have not entered a new message!');
+            return;
+        }
         messageText.innerHTML = newMessage;
     }
 }
