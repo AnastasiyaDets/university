@@ -23,12 +23,6 @@
             </div>
 
             <div class="messages" id="messages">
-                <div class="message">
-                    <a href="#" title="edit"><i class="fa fa-pencil"></i></a>
-                    <a href="#" title="remove" onclick="this.parentNode.remove()" ><i class="fa fa-trash"></i></a>
-                    <span class="myInfo">[28.02.2016 19:38] <b>Harry Potter:</b></span><span class="message">Hi, Everyone!</span>
-                </div>
-                <div class="message"><span class="info">[28.02.2016 19:40] <b>Albus Dumbledore:</b></span><span class="message">Hi, Harry! How are you?</span></div>
             </div>
 
             <div>
@@ -41,7 +35,17 @@
 
     </div>
     <div class="about"><i class="fa fa-copyright">2016 Anastasiya Dets(8 group) BSU FAMCS</i></div>
+    <div id="template-my-message" style="display: none">
+        <a href="#" title="edit"><i class="fa fa-pencil"></i></a>
+        <a href="#" title="remove" onclick="del(this)" ><i class="fa fa-trash"></i></a>
+        <span class="myInfo info">[28.02.2016 19:38] <b>Harry Potter:</b></span>
+        <span class="message"></span>
+    </div>
 
+    <div id="template-message" style="display: none">
+        <span class="info">[28.02.2016 19:38] <b>Harry Potter:</b></span>
+        <span class="message"></span>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
